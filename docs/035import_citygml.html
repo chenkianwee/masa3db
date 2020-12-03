@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tutorial &#8212; Masa3DB User Manual</title>
+    <title>Import CityGML &#8212; Masa3DB User Manual</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -55,8 +55,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="PostgreSQL" href="031postgres.html" />
-    <link rel="prev" title="Setup Masa3DB" href="023setup.html" />
+    <link rel="next" title="Integration" href="040integration.html" />
+    <link rel="prev" title="Initialising 3DCityDB" href="034citydb.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -112,10 +112,10 @@
   </i>
  </li>
  <li class="toctree-l1 current active collapsible-parent">
-  <a class="current reference internal" href="#">
+  <a class="reference internal" href="030tutorial.html">
    Tutorial
   </a>
-  <ul class="collapse-ul">
+  <ul class="current collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="031postgres.html">
      PostgreSQL
@@ -136,8 +136,8 @@
      Initialising 3DCityDB
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="035import_citygml.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Import CityGML
     </a>
    </li>
@@ -199,7 +199,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/docs/030tutorial.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/docs/035import_citygml.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -219,7 +219,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdocs/030tutorial.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdocs/035import_citygml.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -240,6 +240,32 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#official-method-not-working">
+   Official Method (Not Working)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#workaround">
+   Workaround
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#under-development">
+     Under Development … …
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -247,9 +273,34 @@
         
               <div>
                 
-  <div class="section" id="tutorial">
-<h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
+  <div class="section" id="import-citygml">
+<h1>Import CityGML<a class="headerlink" href="#import-citygml" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="official-method-not-working">
+<h2>Official Method (Not Working)<a class="headerlink" href="#official-method-not-working" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p>Download the <a class="reference external" href="https://www.3dcitydb.org/3dcitydb/d3dimpexp/">3D City Database Importer/Exporter</a></p>
+<p>a. You will need to install Java for the installer to work. Install Java <a class="reference external" href="https://java.com/en/download/">here</a></p>
+</li>
+<li><p>Once installed you will need to connect to the database. (However it cannot connect to a PostgreSQL database through a SSL connection.) This method is currently not working.</p>
+<div class="figure align-default" id="dcitydb-connect">
+<a class="reference internal image-reference" href="../_images/3dcitydb_connect.png"><img alt="../_images/3dcitydb_connect.png" src="../_images/3dcitydb_connect.png" style="width: 606.6px; height: 274.8px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">There are no SSL connection settings.</span><a class="headerlink" href="#dcitydb-connect" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>You can still use the software to validate your CityGML file.</p>
+<div class="figure align-default" id="dcitydb-import">
+<a class="reference internal image-reference" href="../_images/3dcitydb_import.png"><img alt="../_images/3dcitydb_import.png" src="../_images/3dcitydb_import.png" style="width: 640.1999999999999px; height: 345.59999999999997px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Interface for importing a CityGML file.</span><a class="headerlink" href="#dcitydb-import" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="workaround">
+<h2>Workaround<a class="headerlink" href="#workaround" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="under-development">
+<h3>Under Development … …<a class="headerlink" href="#under-development" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/3dcitydb/importer-exporter/issues/70#issuecomment-710457603">Possible workaround that has not been implemented</a></p>
+</div>
 </div>
 </div>
 
@@ -281,8 +332,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="023setup.html" title="previous page">Setup Masa3DB</a>
-    <a class='right-next' id="next-link" href="031postgres.html" title="next page">PostgreSQL</a>
+    <a class='left-prev' id="prev-link" href="034citydb.html" title="previous page">Initialising 3DCityDB</a>
+    <a class='right-next' id="next-link" href="040integration.html" title="next page">Integration</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

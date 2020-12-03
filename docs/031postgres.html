@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tutorial &#8212; Masa3DB User Manual</title>
+    <title>PostgreSQL &#8212; Masa3DB User Manual</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -55,8 +55,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="PostgreSQL" href="031postgres.html" />
-    <link rel="prev" title="Setup Masa3DB" href="023setup.html" />
+    <link rel="next" title="Masa3DB with Particle Devices" href="032particle.html" />
+    <link rel="prev" title="Tutorial" href="030tutorial.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -112,12 +112,12 @@
   </i>
  </li>
  <li class="toctree-l1 current active collapsible-parent">
-  <a class="current reference internal" href="#">
+  <a class="reference internal" href="030tutorial.html">
    Tutorial
   </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="031postgres.html">
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      PostgreSQL
     </a>
    </li>
@@ -199,7 +199,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/docs/030tutorial.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/docs/031postgres.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -219,7 +219,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdocs/030tutorial.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdocs/031postgres.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -240,6 +240,25 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#connecting-to-postgresql-using-pgadmin">
+   Connecting to PostgreSQL using pgAdmin
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-frost-server-authenication">
+   Setting FROST-Server Authenication
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -247,9 +266,69 @@
         
               <div>
                 
-  <div class="section" id="tutorial">
-<h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
+  <div class="section" id="postgresql">
+<h1>PostgreSQL<a class="headerlink" href="#postgresql" title="Permalink to this headline">¶</a></h1>
+<p>All the open-source software used in Masa3DB is based on the PostgreSQL database. You can access the underlying PostgreSQL to see how the data are stored. This is also necessary for changing the username and passwords of the FROST-Server.</p>
+<div class="section" id="connecting-to-postgresql-using-pgadmin">
+<h2>Connecting to PostgreSQL using pgAdmin<a class="headerlink" href="#connecting-to-postgresql-using-pgadmin" title="Permalink to this headline">¶</a></h2>
+<p>I will use the pgAdmin software, which is a GUI for managing the Postgresql database, to access the database. I am assuming you installed Masa3DB on a server computer. Now with your own laptop/PC you can access the database remotely.</p>
+<ol>
+<li><p>Download and install pgAdmin on your local computer. <a class="reference external" href="https://www.pgadmin.org/download/">Download pgAdmin</a></p></li>
+<li><p>First right click on the servers and create a new server.</p>
+<div class="figure align-default" id="create-server">
+<a class="reference internal image-reference" href="../_images/create_server.png"><img alt="../_images/create_server.png" src="../_images/create_server.png" style="width: 477.0px; height: 270.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Create a new server.</span><a class="headerlink" href="#create-server" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>In the general tab enter a name. In my case, I used the name chaos.</p>
+<div class="figure align-default" id="server-name">
+<a class="reference internal image-reference" href="../_images/server_name.png"><img alt="../_images/server_name.png" src="../_images/server_name.png" style="width: 373.5px; height: 131.5px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Fill in the server name.</span><a class="headerlink" href="#server-name" title="Permalink to this image">¶</a></p>
+</div>
+<p>a. In the connection tab key in localhost for your host, and enter the username and password you entered while setting up the masa3db process.</p>
+<div class="figure align-default" id="connection-detail">
+<a class="reference internal image-reference" href="../_images/connection_detail.png"><img alt="../_images/connection_detail.png" src="../_images/connection_detail.png" style="width: 375.0px; height: 232.5px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Fill in the connection details.</span><a class="headerlink" href="#connection-detail" title="Permalink to this image">¶</a></p>
+</div>
+<p>b. We are using ssh to access the server computer. Key in the necessary parameters to connect to your host computer. The details of how you ssh into your ubuntu server/computer. Click save and you will be able to access the database.</p>
+<div class="figure align-default" id="ssh-tunnel">
+<a class="reference internal image-reference" href="../_images/ssh_tunnel.png"><img alt="../_images/ssh_tunnel.png" src="../_images/ssh_tunnel.png" style="width: 375.5px; height: 412.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Fill in the ssh tunnel details.</span><a class="headerlink" href="#ssh-tunnel" title="Permalink to this image">¶</a></p>
+</div>
+<p>c. As you remember in the Masa3db setup script the database name that we created is spatempdb. Click on the extensions and you will be able to see all the extensions installed in the database. They should include all of the extensions shown below.</p>
+<div class="figure align-default" id="db-extension">
+<a class="reference internal image-reference" href="../_images/db_extension.png"><img alt="../_images/db_extension.png" src="../_images/db_extension.png" style="width: 198.0px; height: 262.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">You can see all the extension that is installed.</span><a class="headerlink" href="#db-extension" title="Permalink to this image">¶</a></p>
+</div>
+<p>d. Go to the schema-&gt;public-&gt;tables. You should see 20 tables based on the sensorthings api data model for modelling your IoT network.</p>
+<div class="figure align-default" id="db-tables">
+<a class="reference internal image-reference" href="../_images/db_tables.png"><img alt="../_images/db_tables.png" src="../_images/db_tables.png" style="width: 216.5px; height: 373.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">You can see all the tables of the Sensorthing API.</span><a class="headerlink" href="#db-tables" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="setting-frost-server-authenication">
+<h2>Setting FROST-Server Authenication<a class="headerlink" href="#setting-frost-server-authenication" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p>Right click the table USERS -&gt; View/Edit Data -&gt; All Rows. You will see the table with all the information below. There are three users defined in this table:admin, read and write.</p>
+<div class="figure align-default" id="user-pw">
+<a class="reference internal image-reference" href="../_images/user_pw.png"><img alt="../_images/user_pw.png" src="../_images/user_pw.png" style="width: 562.4px; height: 241.60000000000002px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">All the username and their password.</span><a class="headerlink" href="#user-pw" title="Permalink to this image">¶</a></p>
+</div>
+<p>a. I will rename “admin” to my desired username. In this case, I will name it “new_user_name”. Double-click on the cell. Change the name. Then click on the “Save Data Change” button. You can change the password similarly here.</p>
+<div class="figure align-default" id="user-edit">
+<a class="reference internal image-reference" href="../_images/user_edit.png"><img alt="../_images/user_edit.png" src="../_images/user_edit.png" style="width: 500.0px; height: 264.8px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Editing the username and password.</span><a class="headerlink" href="#user-edit" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Now right-click on the table USER_ROLES -&gt; View/Edit Data -&gt; All Rows. The change is reflected in this table. According to the table, the USER_NAME: new_user_name has the ROLES of admin, create, delete, read and update. It means the user new_user_name is able to do all these actions. So you can create new users and their roles for accessing the Sensorthings API by manipulating these two tables.</p>
+<div class="figure align-default" id="user-roles">
+<a class="reference internal image-reference" href="../_images/user_roles.png"><img alt="../_images/user_roles.png" src="../_images/user_roles.png" style="width: 752.0px; height: 320.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">All the username and their roles.</span><a class="headerlink" href="#user-roles" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
 </div>
 </div>
 
@@ -281,8 +360,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="023setup.html" title="previous page">Setup Masa3DB</a>
-    <a class='right-next' id="next-link" href="031postgres.html" title="next page">PostgreSQL</a>
+    <a class='left-prev' id="prev-link" href="030tutorial.html" title="previous page">Tutorial</a>
+    <a class='right-next' id="next-link" href="032particle.html" title="next page">Masa3DB with Particle Devices</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tutorial &#8212; Masa3DB User Manual</title>
+    <title>Setup Masa3DB &#8212; Masa3DB User Manual</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -55,8 +55,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="PostgreSQL" href="031postgres.html" />
-    <link rel="prev" title="Setup Masa3DB" href="023setup.html" />
+    <link rel="next" title="Tutorial" href="030tutorial.html" />
+    <link rel="prev" title="Docker" href="021docker.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -92,18 +92,18 @@
  </li>
 </ul>
 <ul class="current nav sidenav_l1">
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="020installation.html">
    Installation
   </a>
-  <ul class="collapse-ul">
+  <ul class="current collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="021docker.html">
      Docker
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="023setup.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Setup Masa3DB
     </a>
    </li>
@@ -111,8 +111,8 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 current active collapsible-parent">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="030tutorial.html">
    Tutorial
   </a>
   <ul class="collapse-ul">
@@ -199,7 +199,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/docs/030tutorial.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/docs/023setup.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -219,7 +219,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdocs/030tutorial.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdocs/023setup.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -240,6 +240,37 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubuntu-20-04">
+   Ubuntu 20.04
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#download-masa3db-onto-your-machine">
+     Download Masa3DB onto your machine
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-masa3db">
+     Install Masa3DB
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#uninstall-masa3db">
+     Uninstall Masa3DB
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -247,9 +278,109 @@
         
               <div>
                 
-  <div class="section" id="tutorial">
-<h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
+  <div class="section" id="setup-masa3db">
+<h1>Setup Masa3DB<a class="headerlink" href="#setup-masa3db" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ubuntu-20-04">
+<h2>Ubuntu 20.04<a class="headerlink" href="#ubuntu-20-04" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="download-masa3db-onto-your-machine">
+<h3>Download Masa3DB onto your machine<a class="headerlink" href="#download-masa3db-onto-your-machine" title="Permalink to this headline">¶</a></h3>
+<ol>
+<li><p>Go to the terminal on your Ubuntu machine. Run this command to download the masa3db package.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ curl -L https://github.com/chenkianwee/masa3db/archive/0.02.zip &gt; masa3db-0.02.zip
+</pre></div>
+</div>
+<p>a. If curl is not installed on your machine. Install it with this command.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get curl
+</pre></div>
+</div>
+</li>
+<li><p>Unzip the file with this command.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ unzip masa3db-0.02.zip
+</pre></div>
+</div>
+<p>a. If unzip is not installed on your machine. Install it with this command.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get unzip
+</pre></div>
+</div>
+</li>
+<li><p>Go into the masa3db-0.02 folder with this command. You will be able to see the following folders and files.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd masa3db-0.02
+
+LICENSE  README.md  shellscript  timescale-3dcitydb
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="install-masa3db">
+<h3>Install Masa3DB<a class="headerlink" href="#install-masa3db" title="Permalink to this headline">¶</a></h3>
+<ol>
+<li><p>Execute this command to install Masa3DB.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd masa3db-0.02/shellscript
+
+$ sudo sh setup_masa3db.sh
+</pre></div>
+</div>
+</li>
+<li><p>The script will ask you to enter a series of parameters. Most of the parameters you can just accept the defaults. Remember the passwords and username you entered here as you will need it later.</p>
+<div class="figure align-default" id="setup-parm2">
+<img alt="../_images/setup_parm2.png" src="../_images/setup_parm2.png" />
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">The series of parameters to fill, in pay attention to the two parameters as stated below.</span><a class="headerlink" href="#setup-parm2" title="Permalink to this image">¶</a></p>
+</div>
+<p>a. Pay attention to the Service Root URL. If you already have a domain name for your server enter that as the Service Root URL. In this example our domain name is http://chaosbox.princeton.edu.
+<br/><br/>
+b. The other parameter to pay attention to is if you want to allow the public to request for data from your database without the need of a password. If you want to set a password set the parameter to “false”.</p>
+<div class="figure align-default" id="setup-parm">
+<img alt="../_images/setup_parm.png" src="../_images/setup_parm.png" />
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Two parameters to pay attention.</span><a class="headerlink" href="#setup-parm" title="Permalink to this image">¶</a></p>
+</div>
+<p>c. If the installation is successful you will see these messages.</p>
+<div class="figure align-default" id="setup-success">
+<img alt="../_images/setup_success.png" src="../_images/setup_success.png" />
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">A successful setup.</span><a class="headerlink" href="#setup-success" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>We will check if the database has been successfully installed. Type in this command.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo docker ps
+</pre></div>
+</div>
+<p>a. One container is running the postgresql database (container name: spatempdb) and the other is running the FROST-Server (Sensorthings API server) (container name: frost). All the data is stored in the spatempdb container while the frost container enables the sensorthings api to access the database.</p>
+<div class="figure align-default" id="docker-containers">
+<img alt="../_images/docker_containers.png" src="../_images/docker_containers.png" />
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Two containers will be running spatempdb and frost if you have accepted the default naming of containers.</span><a class="headerlink" href="#docker-containers" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Go to http://you_public_ip_address:8080/FROST-Server you will be able to see this landing page. This means that your sensorthings API is setup.</p>
+<div class="figure align-default" id="sensorthings-landing">
+<img alt="../_images/sensorthings_landing.png" src="../_images/sensorthings_landing.png" />
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">The landing page of the FROST-Server (Sensorthings API).</span><a class="headerlink" href="#sensorthings-landing" title="Permalink to this image">¶</a></p>
+</div>
+<p>a. Click on the Database Status and Update. You will be prompted to key in your username and password. The default username and passwords are admin. We can change it later.
+<br/><br/>
+b. Once you enter the page click on do update. Once successfully update this message will be shown.</p>
+<div class="figure align-default" id="sensorthings-update">
+<img alt="../_images/sensorthings_update.png" src="../_images/sensorthings_update.png" />
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Successfully updated the FROST-Server settings.</span><a class="headerlink" href="#sensorthings-update" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Congratulation you have successfully installed Masa3DB.</p></li>
+</ol>
+</div>
+<div class="section" id="uninstall-masa3db">
+<h3>Uninstall Masa3DB<a class="headerlink" href="#uninstall-masa3db" title="Permalink to this headline">¶</a></h3>
+<ol>
+<li><p>Execute this command to uninstall Masa3DB.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!!!This will remove the database with all its data!!!
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd masa3db-0.02/shellscript
+
+$ sudo sh rmv_masa3db.sh
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
 </div>
 </div>
 
@@ -281,8 +412,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="023setup.html" title="previous page">Setup Masa3DB</a>
-    <a class='right-next' id="next-link" href="031postgres.html" title="next page">PostgreSQL</a>
+    <a class='left-prev' id="prev-link" href="021docker.html" title="previous page">Docker</a>
+    <a class='right-next' id="next-link" href="030tutorial.html" title="next page">Tutorial</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
