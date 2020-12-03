@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Introduction to Masa3DB &#8212; Masa3DB User Manual</title>
+    <title>Visualisation with CesiumJS &#8212; Masa3DB User Manual</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -55,7 +55,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Installation" href="020installation.html" />
+    <link rel="next" title="Analysis" href="038analysis.html" />
+    <link rel="prev" title="Visualisation with 036grafana" href="036grafana.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -84,13 +85,13 @@
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <ul class="nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="010intro.html">
    Introduction to Masa3DB
   </a>
  </li>
 </ul>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="020installation.html">
    Installation
@@ -115,11 +116,11 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="030tutorial.html">
    Tutorial
   </a>
-  <ul class="collapse-ul">
+  <ul class="current collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="031postgres.html">
      PostgreSQL
@@ -147,11 +148,11 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="036grafana.html">
-     Visualisation with Grafana
+     Visualisation with 036grafana
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="037cesium3d.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Visualisation with CesiumJS
     </a>
    </li>
@@ -218,7 +219,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/docs/010intro.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/docs/037cesium3d.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -238,7 +239,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdocs/010intro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdocs/037cesium3d.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -259,6 +260,20 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#under-development">
+   Under Development … …
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -266,17 +281,10 @@
         
               <div>
                 
-  <div class="section" id="introduction-to-masa3db">
-<h1>Introduction to Masa3DB<a class="headerlink" href="#introduction-to-masa3db" title="Permalink to this headline">¶</a></h1>
-<p>The Masa3DB is a open-source database that can handle spatial time-series data. It is an integration of the following open-source software:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.postgresql.org/">PostgreSQL Database</a> – the core database software.</p></li>
-<li><p><a class="reference external" href="https://docs.timescale.com/latest/main">TimescaleDB</a> – extension of PostgreSQL that can handle time-series data.</p></li>
-<li><p><a class="reference external" href="https://postgis.net/">Postgis</a> – extension of PostgreSQL that can handle spatial data.</p></li>
-<li><p><a class="reference external" href="https://www.3dcitydb.org/3dcitydb/">3DCityDB</a> – extension of PostgreSQL that can handle 3D City data, it uses the data model of CityGML.</p></li>
-<li><p><a class="reference external" href="https://www.iosb.fraunhofer.de/servlet/is/82077/">FROST-Server</a> – PostgreSQL based implementation of the Sensorthings API.</p></li>
-</ul>
-<div class="toctree-wrapper compound">
+  <div class="section" id="visualisation-with-cesiumjs">
+<h1>Visualisation with CesiumJS<a class="headerlink" href="#visualisation-with-cesiumjs" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="under-development">
+<h2>Under Development … …<a class="headerlink" href="#under-development" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -308,7 +316,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='right-next' id="next-link" href="020installation.html" title="next page">Installation</a>
+    <a class='left-prev' id="prev-link" href="036grafana.html" title="previous page">Visualisation with 036grafana</a>
+    <a class='right-next' id="next-link" href="038analysis.html" title="next page">Analysis</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
