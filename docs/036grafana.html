@@ -175,6 +175,11 @@
      Timescale-3DCityDB
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="042webhooks.html">
+     Particle Webhooks
+    </a>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -266,8 +271,8 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#under-development">
-   Under Development … …
+  <a class="reference internal nav-link" href="#install-grafana">
+   Install Grafana
   </a>
  </li>
 </ul>
@@ -283,8 +288,18 @@
                 
   <div class="section" id="visualisation-with-grafana">
 <h1>Visualisation with Grafana<a class="headerlink" href="#visualisation-with-grafana" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="under-development">
-<h2>Under Development … …<a class="headerlink" href="#under-development" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="install-grafana">
+<h2>Install Grafana<a class="headerlink" href="#install-grafana" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p>If you have not installed Docker. Install Docker <span class="xref std std-doc">21docker</span>.</p></li>
+<li><p>If you have not installed Masa3DB. Install Masa3DB <span class="xref std std-doc">23setup</span>.</p></li>
+<li><p>Run this command to install Grafana.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo docker run -d --network masa3db -p 3000:3000 --name grafana grafana/grafana  
+</pre></div>
+</div>
+</li>
+<li><p>Go to the server where you have installed your Grafana. In my case, I have installed it at http://chaosbox.princeton.edu:3000 (will need to VPN into the local intranet). For the first time, login to Grafana with username:admin and password:admin. Once login change the password and username.</p></li>
+</ol>
 </div>
 </div>
 
