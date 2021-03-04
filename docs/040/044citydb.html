@@ -341,6 +341,15 @@
 </pre></div>
 </div>
 </li>
+<li><p>Remember to configure the search path of the database back to its pre-bash sequence, if not, the next time you restart the containers, FROST-Server will fail.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ psql -U $username spatempdb
+
+# in the psql console execute this command
+
+ALTER ROLE $username SET search_path = &quot;$user&quot;, public, citydb, citydb_pkg;
+</pre></div>
+</div>
+</li>
 </ol>
 </div>
 
